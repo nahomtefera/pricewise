@@ -1,3 +1,4 @@
+import HeroCarousel from "@/components/heroCarousel"
 import SearchBar from "@/components/searchBar"
 import Image from "next/image"
 
@@ -19,7 +20,7 @@ const Home = () => {
 
             <h1 className="head-text">
               Unleash the Power of
-              <span className="text-primary">PriceWise</span>
+              <span className="text-primary"> PriceWise</span>
             </h1>
 
             <p className="mt-6">
@@ -29,7 +30,7 @@ const Home = () => {
             <SearchBar />
           </div>
 
-          HeroCarousel
+          <HeroCarousel />
         </div>
       </section>
 
