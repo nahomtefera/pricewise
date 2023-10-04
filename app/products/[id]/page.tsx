@@ -4,9 +4,11 @@ import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import PriceInfoCard from "@/components/priceInfoCard";
+import ProductCard from "@/components/productCard";
+import { getSimilarProducts } from "@/libs/actions";
 
 type Props = {
-    param: { id: string }
+    params: { id: string }
 }
 
 const ProductDetails = async ({ params: { id } }: Props) => {
@@ -14,6 +16,8 @@ const ProductDetails = async ({ params: { id } }: Props) => {
     const product = await getProductById(id);
 
     if(!product) redirect("/");
+
+    const similiarProducts = await getSimilarProducts(product.id);
 
     return (
         <div className="product-container">
@@ -173,6 +177,24 @@ const ProductDetails = async ({ params: { id } }: Props) => {
 
                 </button>
             </div>
+            {
+                similiarProducts && similiarProducts?.length > 0 && (
+                    <div className="py-14 flex flex-col gap-2 w-full">
+                        <p className="section-text"> Similar Products </p>
+
+                        <div className="flex flex-wrap gap-10 mt-7 w-full">
+                            {
+                                similiarProducts.map((product) => (
+                                    <ProductCard 
+                                        key={product.id}
+                                        product={product}
+                                    />
+                                ))
+                            }
+                        </div>
+                    </div>
+                )
+            }
         </div>
     )
 }
