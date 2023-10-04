@@ -3,7 +3,7 @@ import { PriceHistoryItem } from "@/types";
 export function extractPrice(...elements: any) {
     for (const element of elements) {
         const priceText = element.text().trim();
-        
+    
         if(priceText) {
             const cleanPrice = priceText.replace(/[^\d.]/g, '');
 
@@ -98,3 +98,10 @@ export function isValidAmazonProductURL(url:string):boolean{
 
     return false
 }
+
+export const formatNumber = (num: number = 0) => {
+  return num.toLocaleString(undefined, {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+};
