@@ -6,6 +6,7 @@ import Link from "next/link";
 import PriceInfoCard from "@/components/priceInfoCard";
 import ProductCard from "@/components/productCard";
 import { getSimilarProducts } from "@/libs/actions";
+import Modal from "@/components/modal";
 
 type Props = {
     params: { id: string }
@@ -146,7 +147,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
                         </div>
                     </div>
 
-                    modal
+                    <Modal />
                 </div>
             </div>
 
