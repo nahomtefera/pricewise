@@ -24,7 +24,7 @@ export function extractPrice(...elements: any) {
             firstPrice = cleanPrice.match(/\d+\.\d{2}/)?.[0];
             } 
 
-            return firstPrice || cleanPrice;
+            return firstPrice || cleanPrice || 99;
         }
     }
     
