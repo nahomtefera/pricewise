@@ -95,7 +95,7 @@ const Modal = ({productId}: Props) => {
                                 <h4 className='dialog-head_text'>Stay updated with product pricing alerts right in your inbox!</h4>
                                 <p className='text-sm text-gray-600 mt-2'>Never miss a bargain again with our timely alerts!</p>
 
-                                <form className="flex flex-col mt-5">
+                                <form className="flex flex-col mt-5" onSubmit={handleSumbit}>
                                     <label htmlFor="email" className='text-sm font-medium text-gray-700'>
                                         Email address
                                     </label>
@@ -118,7 +118,7 @@ const Modal = ({productId}: Props) => {
                                         />
                                     </div>
 
-                                    <button type='submit' className='dialog-btn' onClick={handleSumbit}>
+                                    <button type='submit' className='dialog-btn'>
                                         {isSubmitting ? 'Submitting...' : 'Track'}
                                     </button>
                                 </form>

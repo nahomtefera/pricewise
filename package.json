@@ -13,11 +13,12 @@
     "axios": "^1.5.1",
     "cheerio": "^1.0.0-rc.12",
     "mongoose": "^7.5.3",
-    "next": "latest",
+    "next": "^13.5.4",
     "nodemailer": "^6.9.6",
     "react": "latest",
     "react-dom": "latest",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "supports-color": "^8.1.1"
   },
   "devDependencies": {
     "@types/node": "latest",
